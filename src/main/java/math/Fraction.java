@@ -263,7 +263,12 @@ public class Fraction extends Number implements Cloneable {
     @Override
     public Object clone() {
         // TODO (T8192Z)
-        return null;
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**
@@ -277,7 +282,12 @@ public class Fraction extends Number implements Cloneable {
     @Override
     public boolean equals(Object o) {
         // TODO (T8192Z)
-        return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Fraction))
+            return false;
+        Fraction f = (Fraction) o;
+        return numerator == f.numerator && denominator == f.denominator;
     }
 
     /**
@@ -288,7 +298,7 @@ public class Fraction extends Number implements Cloneable {
     @Override
     public int hashCode() {
         // TODO (T8192Z)
-        return 0;
+        return Integer.hashCode(numerator) + Integer.hashCode(denominator * 31);
     }
 
     /**
