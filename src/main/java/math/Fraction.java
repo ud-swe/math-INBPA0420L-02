@@ -170,8 +170,10 @@ public class Fraction extends Number implements Cloneable {
      * @return a fraction that represents the result
      */
     public Fraction multiply(Fraction fraction) {
-        // TODO (GHBJIL)
-        return null;
+        if(this.denominator == 0 || fraction == Fraction.ZERO){
+            return Fraction.ZERO;
+        }
+        return new Fraction(numerator*fraction.numerator,denominator*fraction.denominator);
     }
 
     /**
