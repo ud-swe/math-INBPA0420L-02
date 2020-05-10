@@ -203,7 +203,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public int intValue() {
         // TODO (UPZBAY)
-        return 0;
+        return numerator/denominator;
     }
 
     /**
@@ -213,7 +213,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public double doubleValue() {
         // TODO (UPZBAY)
-        return 0;
+        return (double)numerator/(double)denominator;
     }
 
     /**
@@ -223,7 +223,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public float floatValue() {
         // TODO (UPZBAY)
-        return 0;
+        return (float)numerator/(float)denominator;
     }
 
     /**
@@ -233,7 +233,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public long longValue() {
         // TODO (UPZBAY)
-        return 0;
+        return (long)numerator/(long)denominator;
     }
 
     /**
