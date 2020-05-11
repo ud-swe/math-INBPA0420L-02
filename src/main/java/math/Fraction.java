@@ -103,7 +103,12 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction multiply(int n) {
         // TODO (N5JEMF)
-        return null;
+             if (n==0){
+           return new Fraction(0);
+       }
+       else{
+           return new Fraction(numerator/n,denominator);
+       }
     }
 
     /**
