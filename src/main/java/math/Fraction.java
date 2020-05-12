@@ -81,7 +81,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction add(int n) {
         // TODO
-        return null;
+        return new Fraction(numerator + (n * denominator), denominator);
     }
 
     /**
@@ -92,7 +92,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction subtract(int n) {
         // TODO
-        return null;
+        return new Fraction(numerator - (n * denominator), denominator);
     }
 
     /**
@@ -244,6 +244,9 @@ public class Fraction extends Number implements Cloneable {
      */
     public boolean isZero() {
         // TODO (EGG6BH)
+        if (this.denominator == 0) {
+            throw new ArithmeticException("Division by zero");
+        } else if (this.numerator == 0) return true;
         return false;
     }
 
@@ -254,7 +257,11 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction reduce() {
         // TODO (EGG6BH) - implement the method using GCD.gcd()
-        return null;
+        if (GCD.gcd(getNumerator(),getDenominator()) == 1 ||
+                GCD.gcd(getNumerator(),getDenominator()) == 0)
+            {return new Fraction(getNumerator(),getDenominator());}
+        else return new Fraction(getNumerator() / GCD.gcd(getDenominator(),getNumerator()),
+                getDenominator() / GCD.gcd(getDenominator(),getNumerator()));
     }
 
     /**
