@@ -154,7 +154,9 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction add(Fraction fraction) {
         // TODO (RKSR4A)
-        return null;
+        if(denominator==fraction.denominator)
+            return new Fraction(numerator+fraction.numerator ,denominator);
+        return new Fraction(numerator*fraction.denominator+fraction.numerator*denominator, denominator*fraction.denominator);
     }
 
     /**
@@ -165,7 +167,9 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction subtract(Fraction fraction) {
         // TODO (RKSR4A)
-        return null;
+        if(denominator==fraction.denominator)
+            return new Fraction(numerator-fraction.numerator ,denominator);
+        return new Fraction(numerator*fraction.denominator-fraction.numerator*denominator, denominator*fraction.denominator);
     }
 
     /**
