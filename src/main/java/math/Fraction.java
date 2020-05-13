@@ -182,8 +182,11 @@ public class Fraction extends Number implements Cloneable {
      * @return a fraction that represents the reciprocal of this fraction
      */
     public Fraction reciprocal() {
-        // TODO (X0Q03E)
-        return null;
+        if (numerator<0){
+            return new Fraction(-denominator,-numerator);
+        }else{
+            return new Fraction(denominator,numerator);
+        }
     }
 
     /**
@@ -192,8 +195,7 @@ public class Fraction extends Number implements Cloneable {
      * @return the absolute value of this fraction
      */
     public Fraction abs() {
-        // TODO (X0Q03E)
-        return null;
+        return new Fraction(Math.abs(numerator),Math.abs(denominator));
     }
 
     /**
