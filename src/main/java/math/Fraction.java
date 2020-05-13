@@ -126,7 +126,24 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction pow(int n) {
         // TODO (XDSOS5)
-        return null;
+        if(n == 0)
+            return new Fraction(1,1);
+
+        boolean isNegativeExpo = n < 0;
+        n = n < 0 ? -n : n;
+
+        int numerator = this.numerator;
+        int denominator = this.denominator;
+
+        while (n != 1){
+            numerator *= this.numerator;
+            denominator *= this.denominator;
+            n--;
+        }
+
+        if(isNegativeExpo)
+            return new Fraction(denominator, numerator);
+        return new Fraction(numerator, denominator);
     }
 
     /**
